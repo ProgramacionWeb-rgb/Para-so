@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Mismo head que las otras páginas -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="https://r.mobirisesite.com/1419722/assets/images/photo-1519162808019-7de1683fa2ad.jpeg" type="image/x-icon">
+    <meta name="description" content="Abarrotes El Paraíso ofrece productos frescos y abarrotes de calidad. Ideal para compras diarias en tu barrio.">
+    <title>Carrito de Compras - Abarrotes El Paraíso</title>
+    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/web/assets/mobirise-icons2/mobirise2.css?rnd=1745140087456">
+    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/bootstrap/css/bootstrap.min.css?rnd=1745140087456">
+    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/bootstrap/css/bootstrap-grid.min.css?rnd=1745140087456">
+    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/bootstrap/css/bootstrap-reboot.min.css?rnd=1745140087456">
+    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/dropdown/css/style.css?rnd=1745140087456">
+    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/socicon/css/styles.css?rnd=1745140087456">
+    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/theme/css/style.css?rnd=1745140087456">
+    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/recaptcha.css?rnd=1745140087456">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Liter&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Liter&display=swap&display=swap"></noscript>
+    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/css/mbr-additional.css?rnd=1745140087456" type="text/css">
+    <link rel="stylesheet" href="carrito.css">
+<style>
+.navbar-fixed-top {
+    top: auto;
+}
+</style>
+
+</head>
+<body>
+    <!-- Mismo header que las otras páginas -->
+    <section data-bs-version="5.1" class="menu menu01 ridem5 cid-uITnIBtUjZ" once="menu" id="menu-1-uITnIBtUjZ">
+    <nav class="navbar navbar-dropdown navbar-expand-lg">
+        <div class="menu_box container-fluid">
+            <div class="navbar-brand d-flex">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                        <img src="https://r.mobirisesite.com/1419722/assets/images/photo-1519162808019-7de1683fa2ad.jpeg" alt="Abarrotes El Paraíso">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap">
+                    <a class="navbar-caption display-7" href="index.html">Paraíso</a>
+                </span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" 
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                    <li class="nav-item">
+                        <a class="nav-link link display-4 active" href="frutas-frescas.html">Frutas Frescas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link display-4" href="abarrotes.html">Abarrotes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link display-4" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <div class="mbr-section-btn-main" role="tablist"><a class="btn btn-primary display-4" href="#">¡Compra Ya!</a></div>
+            </div>
+        </div>
+    </nav>
+    </section>
+
+    <section data-bs-version="5.1" class="menu menu01 ridem5 cid-uITnIBtUjZ" once="menu" id="menu-1-uITnIBtUjZ">
+        <!-- Copiar el mismo menú de las otras páginas -->
+    </section>
+
+    <!-- Contenido del carrito -->
+    <section class="carrito-container">
+        <h2 class="mbr-section-title mbr-fonts-style display-2">Tu Carrito de Compras</h2>
+        
+        <div id="carrito-vacio">
+            <p class="mbr-text mbr-fonts-style display-4">Tu carrito está vacío</p>
+            <a href="abarrotes.html" class="btn btn-primary display-4">Ver Productos</a>
+        </div>
+        
+        <div id="carrito-lleno">
+            <div id="carrito-container"></div>
+            
+            <div class="resumen-carrito">
+                <h3 class="mbr-fonts-style display-5">Resumen de Compra</h3>
+                <div class="total-carrito">Total: <span id="total-carrito">S/0.00</span></div>
+                <button class="btn btn-primary btn-finalizar display-4" onclick="generarBoleta()">Finalizar Compra</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mismo footer que las otras páginas -->
+    <section data-bs-version="5.1" class="footer01 ridem5 cid-uITnIBGus9" once="footers" id="footer-1-uITnIBGus9">
+        <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-4">
+                <div class="content-wrapper">
+                    <h2 class="mbr-section-title mbr-fonts-style display-5">¡Gracias por Visitar!</h2>
+                    <p class="mbr-text mbr-fonts-style display-4">Esperamos verte pronto en Abarrotes El Paraíso. ¡Tu tienda de confianza!</p>
+                    <div class="mbr-section-btn">
+                        <a class="btn btn-primary display-4" href="#">Volver Arriba</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-2">
+                <div class="list-wrapper">
+                    <ul class="list mbr-fonts-style display-4">
+                        <li class="item-wrap"><a href="index.html">Inicio</a></li>
+                        <li class="item-wrap"><a href="frutas-frescas.html">Frutas</a></li>
+                        <li class="item-wrap"><a href="abarrotes.html">Abarrotes</a></li>
+                        <li class="item-wrap"><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-lg-3">
+                <div class="list-wrapper">
+                    <ul class="list mbr-fonts-style display-4">
+                        <li class="item-wrap">Términos de Uso</li>
+                        <li class="item-wrap">FAQ</li>
+                        <li class="item-wrap">Política de Privacidad</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="copy-wrapper">
+                    <p class="mbr-copy mbr-fonts-style display-4">© 2025 Abarrotes El Paraíso. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Mismos scripts que las otras páginas -->
+    <script src="https://r.mobirisesite.com/1419722/assets/web/assets/jquery/jquery.min.js?rnd=1745140087456"></script>
+    <script src="https://r.mobirisesite.com/1419722/assets/bootstrap/js/bootstrap.bundle.min.js?rnd=1745140087456"></script>
+    <script src="https://r.mobirisesite.com/1419722/assets/web/assets/jquery/jquery.min.js?rnd=1745140087456"></script>
+    <script src="https://r.mobirisesite.com/1419722/assets/bootstrap/js/bootstrap.bundle.min.js?rnd=1745140087456"></script>
+    <script src="https://r.mobirisesite.com/1419722/assets/smoothscroll/smooth-scroll.js?rnd=1745140087456"></script>
+    <script src="https://r.mobirisesite.com/1419722/assets/ytplayer/index.js?rnd=1745140087456"></script>
+    <script src="https://r.mobirisesite.com/1419722/assets/dropdown/js/navbar-dropdown.js?rnd=1745140087456"></script>
+    <script src="https://r.mobirisesite.com/1419722/assets/mbr-switch-arrow/mbr-switch-arrow.js?rnd=1745140087456"></script>
+    <script src="https://r.mobirisesite.com/1419722/assets/vimeoplayer/player.js?rnd=1745140087456"></script>
+    <script src="https://r.mobirisesite.com/1419722/assets/theme/js/script.js?rnd=1745140087456"></script>
+    <script src="https://r.mobirisesite.com/1419722/assets/formoid.min.js?rnd=1745140087456"></script>
+    <!-- Agregar nuestro script del carrito -->
+    <script src="carrito.js"></script>
+</body>
+</html>
