@@ -98,8 +98,6 @@
                     <li class="nav-item">
                         <a class="nav-link link display-4" href="contacto.html">Contacto</a>
                     </li>
-                </ul>
-                <div class="mbr-section-btn-main" role="tablist"><a class="btn btn-primary display-4" href="#">¡Compra Ya!</a></div>
             </div>
         </div>
     </nav>
@@ -582,7 +580,9 @@
                         <p class="grocery-price" style="font-size: 1.5rem;">S/14.90</p>
                         <p class="text-danger"><del>S/17.50</del> <span class="badge bg-danger">15% OFF</span></p>
                         <div class="mbr-section-btn mt-3">
-                            <a class="btn btn-primary display-4" href="#">Comprar Ahora</a>
+                            <a class="btn btn-primary display-4" onclick="agregarAlCarrito('Combo Familiar', 'Arroz + Aceite + Fideos', S/14.90,)">
+                                Agregar al carrito
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -623,59 +623,7 @@
     </div>
   </section>
 
-  <!-- Footer (igual al index.html) -->
-  <section data-bs-version="5.1" class="footer01 ridem5 cid-uITnIBGus9" once="footers" id="footer-1-uITnIBGus9">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-4">
-                <div class="content-wrapper">
-                    <h2 class="mbr-section-title mbr-fonts-style display-5">¡Gracias por Visitar!</h2>
-                    <p class="mbr-text mbr-fonts-style display-4">Esperamos verte pronto en Abarrotes El Paraíso. ¡Tu tienda de confianza!</p>
-                    <div class="mbr-section-btn">
-                        <a class="btn btn-primary display-4" href="#">Volver Arriba</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-2">
-                <div class="list-wrapper">
-                    <ul class="list mbr-fonts-style display-4">
-                        <li class="item-wrap"><a href="index.html">Inicio</a></li>
-                        <li class="item-wrap"><a href="frutas-frescas.html">Frutas</a></li>
-                        <li class="item-wrap"><a href="abarrotes.html">Abarrotes</a></li>
-                        <li class="item-wrap"><a href="contacto.html">Contacto</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-lg-3">
-                <div class="list-wrapper">
-                    <ul class="list mbr-fonts-style display-4">
-                        <li class="item-wrap">Términos de Uso</li>
-                        <li class="item-wrap">FAQ</li>
-                        <li class="item-wrap">Política de Privacidad</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="copy-wrapper">
-                    <p class="mbr-copy mbr-fonts-style display-4">© 2025 Abarrotes El Paraíso. Todos los derechos reservados.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-  </section>
-
-  <!-- Scripts (igual al index.html) -->
-  <script src="https://r.mobirisesite.com/1419722/assets/web/assets/jquery/jquery.min.js?rnd=1745140087456"></script>
-  <script src="https://r.mobirisesite.com/1419722/assets/bootstrap/js/bootstrap.bundle.min.js?rnd=1745140087456"></script>
-  <script src="https://r.mobirisesite.com/1419722/assets/smoothscroll/smooth-scroll.js?rnd=1745140087456"></script>
-  <script src="https://r.mobirisesite.com/1419722/assets/ytplayer/index.js?rnd=1745140087456"></script>
-  <script src="https://r.mobirisesite.com/1419722/assets/dropdown/js/navbar-dropdown.js?rnd=1745140087456"></script>
-  <script src="https://r.mobirisesite.com/1419722/assets/mbr-switch-arrow/mbr-switch-arrow.js?rnd=1745140087456"></script>
-  <script src="https://r.mobirisesite.com/1419722/assets/vimeoplayer/player.js?rnd=1745140087456"></script>
-  <script src="https://r.mobirisesite.com/1419722/assets/theme/js/script.js?rnd=1745140087456"></script>
-  <script src="https://r.mobirisesite.com/1419722/assets/formoid.min.js?rnd=1745140087456"></script>
-  
-  <script>
+   <script>
     // Script para filtrar productos por categoría
     $(document).ready(function(){
       $('.category-badge').click(function(){
@@ -739,5 +687,59 @@
 
 <!-- Incluir el script del carrito -->
 <script src="carrito.js"></script>
+
+  <!-- Footer (igual al index.html) -->
+  <section data-bs-version="5.1" class="footer01 ridem5 cid-uITnIBGus9" once="footers" id="footer-1-uITnIBGus9">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-4">
+                <div class="content-wrapper">
+                    <h2 class="mbr-section-title mbr-fonts-style display-5">¡Gracias por Visitar!</h2>
+                    <p class="mbr-text mbr-fonts-style display-4">Esperamos verte pronto en Abarrotes El Paraíso. ¡Tu tienda de confianza!</p>
+                    <div class="mbr-section-btn">
+                        <a class="btn btn-primary display-4" href="#">Volver Arriba</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-2">
+                <div class="list-wrapper">
+                    <ul class="list mbr-fonts-style display-4">
+                        <li class="item-wrap"><a href="index.html">Inicio</a></li>
+                        <li class="item-wrap"><a href="frutas-frescas.html">Frutas</a></li>
+                        <li class="item-wrap"><a href="abarrotes.html">Abarrotes</a></li>
+                        <li class="item-wrap"><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-lg-3">
+                <div class="list-wrapper">
+                    <ul class="list mbr-fonts-style display-4">
+                        <li class="item-wrap">Términos de Uso</li>
+                        <li class="item-wrap">FAQ</li>
+                        <li class="item-wrap">Política de Privacidad</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="copy-wrapper">
+                    <p class="mbr-copy mbr-fonts-style display-4">© 2025 Abarrotes El Paraíso. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Scripts (igual al index.html) -->
+  <script src="https://r.mobirisesite.com/1419722/assets/web/assets/jquery/jquery.min.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/bootstrap/js/bootstrap.bundle.min.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/smoothscroll/smooth-scroll.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/ytplayer/index.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/dropdown/js/navbar-dropdown.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/mbr-switch-arrow/mbr-switch-arrow.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/vimeoplayer/player.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/theme/js/script.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/formoid.min.js?rnd=1745140087456"></script>
+  
+ 
 </body>
 </html>
