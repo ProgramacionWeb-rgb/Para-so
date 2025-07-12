@@ -638,65 +638,6 @@
     </div>
   </section>
 
-   <script>
-    // Script para filtrar productos por categoría
-    $(document).ready(function(){
-      $('.category-badge').click(function(){
-        $('.category-badge').removeClass('active');
-        $(this).addClass('active');
-        // Aquí iría la lógica para filtrar los productos
-      });
-    });
-  </script>
-
-  <!-- Botón flotante del carrito -->
-<button class="btn btn-primary carrito-btn rounded-circle p-3" onclick="toggleCarrito()">
-    <i class="mobi-mbri-cart-add mobi-mbri" style="font-size: 1.5rem;"></i>
-    <span id="contador-carrito">0</span>
-</button>
-
-<!-- Overlay del carrito -->
-<div id="carrito-overlay" onclick="toggleCarrito()"></div>
-
-<!-- Sidebar del carrito -->
-<div id="carrito-sidebar">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h4><i class="mobi-mbri-cart-full mobi-mbri me-2"></i> Mi Carrito</h4>
-        <button class="btn btn-sm btn-outline-danger" onclick="vaciarCarrito()">
-            <i class="mobi-mbri-trash mobi-mbri"></i> Vaciar
-        </button>
-    </div>
-    
-    <div id="carrito-contenido">
-        <p class="text-center">Tu carrito está vacío</p>
-    </div>
-    
-    <div class="border-top pt-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="mb-0">Total:</h5>
-            <h5 class="mb-0" id="carrito-total">S/0.00</h5>
-        </div>
-        <button class="btn btn-primary w-100" onclick="generarBoleta()">
-            <i class="mobi-mbri-shopping-bag mobi-mbri me-2"></i> Finalizar Compra
-        </button>
-    </div>
-</div>
-
-<!-- Modal para la boleta -->
-<div class="modal fade" id="boletaModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Boleta de Compra</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="boleta-modal-body">
-                <!-- Aquí se insertará la boleta -->
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Incluir jQuery (necesario para el modal de Bootstrap) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
