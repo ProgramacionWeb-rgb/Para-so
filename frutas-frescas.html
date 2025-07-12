@@ -83,7 +83,7 @@
                         <a class="nav-link link display-4" href="contacto.html">Contacto</a>
                     </li>
                 </ul>
-              <!-- Icono de carrito independiente -->
+                 <!-- Icono de carrito independiente -->
                 <div class="cart-icon ml-auto">
                     <a href="carrito.html" class="nav-link link display-4">
                         <i class="mobi-mbri-cart-add mobi-mbri" style="font-size: 1.5rem;"></i>
@@ -546,6 +546,7 @@
     </div>
   </section>
 
+
   <!-- Footer (igual al index.html) -->
   <section data-bs-version="5.1" class="footer01 ridem5 cid-uITnIBGus9" once="footers" id="footer-1-uITnIBGus9">
     <div class="container">
@@ -587,7 +588,6 @@
     </div>
   </section>
 
- 
     <!-- Scripts (igual al index.html) -->
     <script src="https://r.mobirisesite.com/1419722/assets/web/assets/jquery/jquery.min.js?rnd=1745140087456"></script>
     <script src="https://r.mobirisesite.com/1419722/assets/bootstrap/js/bootstrap.bundle.min.js?rnd=1745140087456"></script>
@@ -598,7 +598,47 @@
     <script src="https://r.mobirisesite.com/1419722/assets/vimeoplayer/player.js?rnd=1745140087456"></script>
     <script src="https://r.mobirisesite.com/1419722/assets/theme/js/script.js?rnd=1745140087456"></script>
     <script src="https://r.mobirisesite.com/1419722/assets/formoid.min.js?rnd=1745140087456"></script>
-   <!-- Chatbot para Abarrotes El Paraíso -->
+
+    <!-- Script del carrito -->
+  <script>
+    // Función para agregar productos al carrito
+    function agregarAlCarrito(nombre, precio, categoria, imagen) {
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        
+        // Buscar si el producto ya está en el carrito
+        const productoExistente = carrito.find(item => item.nombre === nombre);
+        
+        if (productoExistente) {
+            productoExistente.cantidad += 1;
+        } else {
+            carrito.push({
+                nombre: nombre,
+                precio: precio,
+                categoria: categoria,
+                imagen: imagen,
+                cantidad: 1
+            });
+        }
+        
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        actualizarContadorCarrito();
+        
+        // Mostrar notificación
+        alert(`"${nombre}" ha sido agregado al carrito`);
+    }
+    
+    // Función para actualizar el contador del carrito
+    function actualizarContadorCarrito() {
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        const totalItems = carrito.reduce((total, item) => total + item.cantidad, 0);
+        document.getElementById('contador-carrito').textContent = totalItems;
+    }
+    
+    // Actualizar contador al cargar la página
+    document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
+ </script>
+    
+    <!-- Chatbot para Abarrotes El Paraíso -->
 <div id="chatbot-container">
     <div id="chatbot-button">
         <i class="mobi-mbri-chat mobi-mbri"></i>
@@ -723,6 +763,6 @@
             }
         }
     });
-</script> 
+</script>
 </body>
 </html>
