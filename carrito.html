@@ -1,36 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Mismo head que las otras páginas -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <link rel="shortcut icon" href="https://r.mobirisesite.com/1419722/assets/images/photo-1519162808019-7de1683fa2ad.jpeg" type="image/x-icon">
-    <meta name="description" content="Abarrotes El Paraíso ofrece productos frescos y abarrotes de calidad. Ideal para compras diarias en tu barrio.">
-    <title>Carrito de Compras - Abarrotes El Paraíso</title>
-    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/web/assets/mobirise-icons2/mobirise2.css?rnd=1745140087456">
-    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/bootstrap/css/bootstrap.min.css?rnd=1745140087456">
-    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/bootstrap/css/bootstrap-grid.min.css?rnd=1745140087456">
-    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/bootstrap/css/bootstrap-reboot.min.css?rnd=1745140087456">
-    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/dropdown/css/style.css?rnd=1745140087456">
-    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/socicon/css/styles.css?rnd=1745140087456">
-    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/theme/css/style.css?rnd=1745140087456">
-    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/recaptcha.css?rnd=1745140087456">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Liter&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Liter&display=swap&display=swap"></noscript>
-    <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/css/mbr-additional.css?rnd=1745140087456" type="text/css">
-    <link rel="stylesheet" href="carrito.css">
-<style>
-.navbar-fixed-top {
-    top: auto;
-}
-</style>
-
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="https://r.mobirisesite.com/1419722/assets/images/photo-1519162808019-7de1683fa2ad.jpeg" type="image/x-icon">
+  <meta name="description" content="Carrito de compras de Abarrotes El Paraíso. Revisa y gestiona tus productos antes de pagar.">
+  <title>Carrito de Compras - Abarrotes El Paraíso</title>
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/web/assets/mobirise-icons2/mobirise2.css?rnd=1745140087456">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/bootstrap/css/bootstrap.min.css?rnd=1745140087456">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/bootstrap/css/bootstrap-grid.min.css?rnd=1745140087456">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/bootstrap/css/bootstrap-reboot.min.css?rnd=1745140087456">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/dropdown/css/style.css?rnd=1745140087456">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/socicon/css/styles.css?rnd=1745140087456">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/theme/css/style.css?rnd=1745140087456">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/recaptcha.css?rnd=1745140087456">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Liter&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Liter&display=swap&display=swap"></noscript>
+  <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/css/mbr-additional.css?rnd=1745140087456" type="text/css">
+  
+  <style>
+    .producto-img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .quantity-btn {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #ddd;
+      background: #f8f9fa;
+      cursor: pointer;
+    }
+    .quantity-input {
+      width: 50px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+    .cart-icon {
+      position: relative;
+      margin-left: 15px;
+    }
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: #28a745;
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+    #carrito-vacio {
+      padding: 50px 0;
+      text-align: center;
+    }
+    #carrito-vacio i {
+      font-size: 3rem;
+      color: #6c757d;
+    }
+    .resumen-compra {
+      background-color: #f8f9fa;
+      border-radius: 5px;
+      padding: 20px;
+    }
+    .payment-method {
+      border: 1px solid #dee2e6;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .payment-method:hover {
+      border-color: #28a745;
+      background-color: #f8f9fa;
+    }
+    .payment-method.selected {
+      border-color: #28a745;
+      background-color: #e8f5e9;
+    }
+    .payment-icon {
+      font-size: 1.5rem;
+      margin-right: 10px;
+    }
+    #formulario-pago {
+      display: none;
+    }
+    #confirmacion-pago {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-    <!-- Mismo header que las otras páginas -->
-    <section data-bs-version="5.1" class="menu menu01 ridem5 cid-uITnIBtUjZ" once="menu" id="menu-1-uITnIBtUjZ">
+  
+  <!-- Header/Menú -->
+  <section data-bs-version="5.1" class="menu menu01 ridem5 cid-uITnIBtUjZ" once="menu" id="menu-1-uITnIBtUjZ">
     <nav class="navbar navbar-dropdown navbar-expand-lg">
         <div class="menu_box container-fluid">
             <div class="navbar-brand d-flex">
@@ -55,7 +126,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                     <li class="nav-item">
-                        <a class="nav-link link display-4 active" href="frutas-frescas.html">Frutas Frescas</a>
+                        <a class="nav-link link display-4" href="frutas-frescas.html">Frutas Frescas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link link display-4" href="abarrotes.html">Abarrotes</a>
@@ -64,39 +135,283 @@
                         <a class="nav-link link display-4" href="contacto.html">Contacto</a>
                     </li>
                 </ul>
-                <div class="mbr-section-btn-main" role="tablist"><a class="btn btn-primary display-4" href="#">¡Compra Ya!</a></div>
+                
+                <!-- Icono de carrito independiente -->
+                <div class="cart-icon ml-auto">
+                    <a href="carrito.html" class="nav-link link display-4">
+                        <i class="mobi-mbri-cart-add mobi-mbri" style="font-size: 1.5rem;"></i>
+                        <span class="cart-count" id="contador-carrito">0</span>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
-    </section>
+  </section>
 
-    <section data-bs-version="5.1" class="menu menu01 ridem5 cid-uITnIBtUjZ" once="menu" id="menu-1-uITnIBtUjZ">
-        <!-- Copiar el mismo menú de las otras páginas -->
-    </section>
-
-    <!-- Contenido del carrito -->
-    <section class="carrito-container">
-        <h2 class="mbr-section-title mbr-fonts-style display-2">Tu Carrito de Compras</h2>
-        
-        <div id="carrito-vacio">
-            <p class="mbr-text mbr-fonts-style display-4">Tu carrito está vacío</p>
-            <a href="abarrotes.html" class="btn btn-primary display-4">Ver Productos</a>
-        </div>
-        
-        <div id="carrito-lleno">
-            <div id="carrito-container"></div>
-            
-            <div class="resumen-carrito">
-                <h3 class="mbr-fonts-style display-5">Resumen de Compra</h3>
-                <div class="total-carrito">Total: <span id="total-carrito">S/0.00</span></div>
-                <button class="btn btn-primary btn-finalizar display-4" onclick="generarBoleta()">Finalizar Compra</button>
+  <!-- Contenido del carrito -->
+  <section data-bs-version="5.1" class="content1 ridem5 cid-uITnIBuVFD" id="content-1-uITnIBuVFD">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-12">
+                <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2">
+                    <strong>Carrito de Compras</strong>
+                </h1>
+                
+                <div id="carrito-vacio" class="text-center py-5" style="display: none;">
+                    <i class="mobi-mbri-cart-full mobi-mbri" style="font-size: 3rem;"></i>
+                    <h3 class="mbr-section-title mbr-fonts-style mt-3 display-5">Tu carrito está vacío</h3>
+                    <p class="mbr-text mbr-fonts-style display-7">Agrega productos para continuar</p>
+                    <div class="mbr-section-btn mt-3">
+                        <a href="frutas-frescas.html" class="btn btn-primary display-4">Ir a Comprar</a>
+                    </div>
+                </div>
+                
+                <div id="carrito-contenido">
+                    <!-- Paso 1: Lista de productos -->
+                    <div id="paso-productos">
+                        <div class="row">
+                            <div class="col-12 col-lg-8">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <h4 class="mbr-fonts-style display-5">Productos Seleccionados</h4>
+                                    </div>
+                                    <div class="card-body" id="lista-productos">
+                                        <!-- Los productos se agregarán aquí dinámicamente -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-lg-4">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <h4 class="mbr-fonts-style display-5">Resumen de Compra</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span class="mbr-fonts-style display-7">Subtotal:</span>
+                                            <span class="mbr-fonts-style display-7" id="subtotal">S/0.00</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span class="mbr-fonts-style display-7">Envío:</span>
+                                            <span class="mbr-fonts-style display-7" id="envio">S/0.00</span>
+                                        </div>
+                                        <hr>
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <h4 class="mbr-fonts-style display-5">Total:</h4>
+                                            <h4 class="mbr-fonts-style display-5" id="total">S/0.00</h4>
+                                        </div>
+                                        <div class="mbr-section-btn">
+                                            <button id="btn-continuar-pago" class="btn btn-primary display-4 w-100">Continuar al Pago</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Paso 2: Método de pago y envío -->
+                    <div id="formulario-pago">
+                        <div class="row">
+                            <div class="col-12 col-lg-8">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <h4 class="mbr-fonts-style display-5">Información de Envío</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <form id="form-datos-envio">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="mbr-text mbr-fonts-style display-7">Nombres</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="mbr-text mbr-fonts-style display-7">Apellidos</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="mbr-text mbr-fonts-style display-7">Dirección</label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="mbr-text mbr-fonts-style display-7">Distrito</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="mbr-text mbr-fonts-style display-7">Ciudad</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="mbr-text mbr-fonts-style display-7">Teléfono</label>
+                                                    <input type="tel" class="form-control" required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="mbr-text mbr-fonts-style display-7">Correo Electrónico</label>
+                                                    <input type="email" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="mbr-text mbr-fonts-style display-7">Notas adicionales</label>
+                                                <textarea class="form-control" rows="3"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <h4 class="mbr-fonts-style display-5">Método de Pago</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="payment-method" data-method="tarjeta">
+                                            <div class="d-flex align-items-center">
+                                                <i class="mobi-mbri-credit-card payment-icon"></i>
+                                                <div>
+                                                    <h5 class="mbr-fonts-style display-7 mb-1">Tarjeta de Crédito/Débito</h5>
+                                                    <p class="mbr-text mbr-fonts-style display-4">Paga con Visa, Mastercard o American Express</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="payment-method" data-method="yape">
+                                            <div class="d-flex align-items-center">
+                                                <i class="mobi-mbri-cash payment-icon"></i>
+                                                <div>
+                                                    <h5 class="mbr-fonts-style display-7 mb-1">Yape o Plin</h5>
+                                                    <p class="mbr-text mbr-fonts-style display-4">Paga con tu billetera móvil</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="payment-method" data-method="efectivo">
+                                            <div class="d-flex align-items-center">
+                                                <i class="mobi-mbri-dollar payment-icon"></i>
+                                                <div>
+                                                    <h5 class="mbr-fonts-style display-7 mb-1">Efectivo al recibir</h5>
+                                                    <p class="mbr-text mbr-fonts-style display-4">Paga en efectivo cuando recibas tu pedido</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Formulario de tarjeta (se muestra solo cuando se selecciona tarjeta) -->
+                                        <div id="form-tarjeta" style="display: none; margin-top: 20px;">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <label class="mbr-text mbr-fonts-style display-7">Número de Tarjeta</label>
+                                                    <input type="text" class="form-control" placeholder="1234 5678 9012 3456">
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="mbr-text mbr-fonts-style display-7">Fecha de Expiración</label>
+                                                    <input type="text" class="form-control" placeholder="MM/AA">
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="mbr-text mbr-fonts-style display-7">CVV</label>
+                                                    <input type="text" class="form-control" placeholder="123">
+                                                </div>
+                                                <div class="col-12 mb-3">
+                                                    <label class="mbr-text mbr-fonts-style display-7">Nombre en la Tarjeta</label>
+                                                    <input type="text" class="form-control" placeholder="Como aparece en la tarjeta">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Instrucciones para Yape/Plin -->
+                                        <div id="instrucciones-yape" style="display: none; margin-top: 20px;">
+                                            <div class="alert alert-info">
+                                                <p class="mbr-text mbr-fonts-style display-4">Por favor realiza el pago a nuestro número Yape/Plin: <strong>999 888 777</strong></p>
+                                                <p class="mbr-text mbr-fonts-style display-4">Envía el comprobante a nuestro WhatsApp: <strong>999 888 777</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-lg-4">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <h4 class="mbr-fonts-style display-5">Resumen de Pedido</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="resumen-pedido-pago">
+                                            <!-- Los productos se agregarán aquí dinámicamente -->
+                                        </div>
+                                        <hr>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span class="mbr-fonts-style display-7">Subtotal:</span>
+                                            <span class="mbr-fonts-style display-7" id="subtotal-pago">S/0.00</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span class="mbr-fonts-style display-7">Envío:</span>
+                                            <span class="mbr-fonts-style display-7" id="envio-pago">S/0.00</span>
+                                        </div>
+                                        <hr>
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <h4 class="mbr-fonts-style display-5">Total:</h4>
+                                            <h4 class="mbr-fonts-style display-5" id="total-pago">S/0.00</h4>
+                                        </div>
+                                        <div class="mbr-section-btn">
+                                            <button id="btn-volver-carrito" class="btn btn-outline-secondary display-4 w-100 mb-2">Volver al Carrito</button>
+                                            <button id="btn-confirmar-pago" class="btn btn-primary display-4 w-100">Confirmar Pago</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Paso 3: Confirmación de pago -->
+                    <div id="confirmacion-pago">
+                        <div class="card text-center">
+                            <div class="card-body py-5">
+                                <i class="mobi-mbri-success mobi-mbri" style="font-size: 4rem; color: #28a745;"></i>
+                                <h2 class="mbr-section-title mbr-fonts-style mt-4 display-2">
+                                    <strong>¡Pago Completado!</strong>
+                                </h2>
+                                <p class="mbr-text mbr-fonts-style display-7">Tu pedido ha sido procesado exitosamente</p>
+                                <div class="alert alert-info text-start my-4">
+                                    <h5 class="mbr-fonts-style display-5">Detalles del Pedido:</h5>
+                                    <p class="mbr-text mbr-fonts-style display-4" id="numero-pedido">Número de pedido: <strong>#ABP-2023-001</strong></p>
+                                    <p class="mbr-text mbr-fonts-style display-4" id="metodo-pago">Método de pago: <strong>Tarjeta de Crédito</strong></p>
+                                    <p class="mbr-text mbr-fonts-style display-4" id="total-confirmacion">Total pagado: <strong>S/0.00</strong></p>
+                                </div>
+                                <p class="mbr-text mbr-fonts-style display-7">Hemos enviado los detalles a tu correo electrónico</p>
+                                <div class="mbr-section-btn mt-4">
+                                    <a href="index.html" class="btn btn-primary display-4">Volver al Inicio</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Mismo footer que las otras páginas -->
-    <section data-bs-version="5.1" class="footer01 ridem5 cid-uITnIBGus9" once="footers" id="footer-1-uITnIBGus9">
-        <div class="container">
+  <!-- Modal para eliminar producto -->
+  <div class="modal fade" id="confirmarEliminarModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title mbr-fonts-style display-5">Eliminar Producto</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body mbr-fonts-style display-7">
+                  ¿Estás seguro que deseas eliminar este producto de tu carrito?
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary display-4" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-danger display-4" id="confirmar-eliminar">Eliminar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Footer -->
+  <section data-bs-version="5.1" class="footer01 ridem5 cid-uITnIBGus9" once="footers" id="footer-1-uITnIBGus9">
+    <div class="container">
         <div class="row">
             <div class="col-12 col-lg-4">
                 <div class="content-wrapper">
@@ -133,21 +448,244 @@
             </div>
         </div>
     </div>
-    </section>
+  </section>
 
-    <!-- Mismos scripts que las otras páginas -->
-    <script src="https://r.mobirisesite.com/1419722/assets/web/assets/jquery/jquery.min.js?rnd=1745140087456"></script>
-    <script src="https://r.mobirisesite.com/1419722/assets/bootstrap/js/bootstrap.bundle.min.js?rnd=1745140087456"></script>
-    <script src="https://r.mobirisesite.com/1419722/assets/web/assets/jquery/jquery.min.js?rnd=1745140087456"></script>
-    <script src="https://r.mobirisesite.com/1419722/assets/bootstrap/js/bootstrap.bundle.min.js?rnd=1745140087456"></script>
-    <script src="https://r.mobirisesite.com/1419722/assets/smoothscroll/smooth-scroll.js?rnd=1745140087456"></script>
-    <script src="https://r.mobirisesite.com/1419722/assets/ytplayer/index.js?rnd=1745140087456"></script>
-    <script src="https://r.mobirisesite.com/1419722/assets/dropdown/js/navbar-dropdown.js?rnd=1745140087456"></script>
-    <script src="https://r.mobirisesite.com/1419722/assets/mbr-switch-arrow/mbr-switch-arrow.js?rnd=1745140087456"></script>
-    <script src="https://r.mobirisesite.com/1419722/assets/vimeoplayer/player.js?rnd=1745140087456"></script>
-    <script src="https://r.mobirisesite.com/1419722/assets/theme/js/script.js?rnd=1745140087456"></script>
-    <script src="https://r.mobirisesite.com/1419722/assets/formoid.min.js?rnd=1745140087456"></script>
-    <!-- Agregar nuestro script del carrito -->
-    <script src="carrito.js"></script>
+  <!-- Scripts -->
+  <script src="https://r.mobirisesite.com/1419722/assets/web/assets/jquery/jquery.min.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/bootstrap/js/bootstrap.bundle.min.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/smoothscroll/smooth-scroll.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/ytplayer/index.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/dropdown/js/navbar-dropdown.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/mbr-switch-arrow/mbr-switch-arrow.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/vimeoplayer/player.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/theme/js/script.js?rnd=1745140087456"></script>
+  <script src="https://r.mobirisesite.com/1419722/assets/formoid.min.js?rnd=1745140087456"></script>
+  
+  <script>
+    $(document).ready(function() {
+        let productoAEliminar = null;
+        let metodoPagoSeleccionado = null;
+        
+        // Cargar carrito y mostrar productos
+        function cargarCarrito() {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            
+            if (carrito.length === 0) {
+                $('#carrito-vacio').show();
+                $('#carrito-contenido').hide();
+                $('#btn-continuar-pago').prop('disabled', true);
+                actualizarContadorCarrito(0);
+                return;
+            }
+            
+            $('#carrito-vacio').hide();
+            $('#carrito-contenido').show();
+            
+            let html = '';
+            let subtotal = 0;
+            
+            carrito.forEach((producto, index) => {
+                const precioTotal = producto.precio * producto.cantidad;
+                subtotal += precioTotal;
+                
+                html += `
+                    <div class="row mb-3 producto-item" data-index="${index}">
+                        <div class="col-3">
+                            <img src="${producto.imagen}" alt="${producto.nombre}" class="producto-img">
+                        </div>
+                        <div class="col-6">
+                            <h5 class="mbr-fonts-style display-7">${producto.nombre}</h5>
+                            <p class="mbr-text mbr-fonts-style display-4 mb-1">${producto.categoria}</p>
+                            <p class="mbr-text mbr-fonts-style display-4">S/${producto.precio.toFixed(2)}</p>
+                        </div>
+                        <div class="col-3">
+                            <div class="d-flex align-items-center mb-2">
+                                <button class="quantity-btn decrementar">-</button>
+                                <input type="text" class="quantity-input mx-1" value="${producto.cantidad}" readonly>
+                                <button class="quantity-btn incrementar">+</button>
+                            </div>
+                            <button class="btn btn-sm btn-outline-danger eliminar-producto">Eliminar</button>
+                        </div>
+                    </div>
+                    <hr>
+                `;
+            });
+            
+            $('#lista-productos').html(html);
+            
+            // Calcular totales
+            const envio = subtotal > 50 ? 0 : 5; // Envío gratis para compras mayores a S/50
+            const total = subtotal + envio;
+            
+            $('#subtotal').text(`S/${subtotal.toFixed(2)}`);
+            $('#envio').text(envio === 0 ? 'Gratis' : `S/${envio.toFixed(2)}`);
+            $('#total').text(`S/${total.toFixed(2)}`);
+            
+            $('#btn-continuar-pago').prop('disabled', false);
+            actualizarContadorCarrito(carrito.reduce((total, item) => total + item.cantidad, 0));
+        }
+        
+        // Actualizar contador del carrito
+        function actualizarContadorCarrito(count) {
+            $('.cart-count').text(count);
+        }
+        
+        // Eventos para modificar cantidades
+        $(document).on('click', '.incrementar', function() {
+            const index = $(this).closest('.producto-item').data('index');
+            const carrito = JSON.parse(localStorage.getItem('carrito'));
+            carrito[index].cantidad += 1;
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            cargarCarrito();
+        });
+        
+        $(document).on('click', '.decrementar', function() {
+            const index = $(this).closest('.producto-item').data('index');
+            const carrito = JSON.parse(localStorage.getItem('carrito'));
+            
+            if (carrito[index].cantidad > 1) {
+                carrito[index].cantidad -= 1;
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+                cargarCarrito();
+            }
+        });
+        
+        // Evento para eliminar producto
+        $(document).on('click', '.eliminar-producto', function() {
+            const index = $(this).closest('.producto-item').data('index');
+            productoAEliminar = index;
+            $('#confirmarEliminarModal').modal('show');
+        });
+        
+        $('#confirmar-eliminar').click(function() {
+            const carrito = JSON.parse(localStorage.getItem('carrito'));
+            carrito.splice(productoAEliminar, 1);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            $('#confirmarEliminarModal').modal('hide');
+            cargarCarrito();
+        });
+        
+        // Evento para continuar al pago
+        $('#btn-continuar-pago').click(function() {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            
+            if (carrito.length === 0) {
+                alert('Tu carrito está vacío');
+                return;
+            }
+            
+            // Mostrar resumen en el paso de pago
+            mostrarResumenPago();
+            
+            // Cambiar a la vista de pago
+            $('#paso-productos').hide();
+            $('#formulario-pago').show();
+            $('#confirmacion-pago').hide();
+        });
+        
+        // Evento para volver al carrito
+        $('#btn-volver-carrito').click(function() {
+            $('#paso-productos').show();
+            $('#formulario-pago').hide();
+            $('#confirmacion-pago').hide();
+        });
+        
+        // Selección de método de pago
+        $('.payment-method').click(function() {
+            $('.payment-method').removeClass('selected');
+            $(this).addClass('selected');
+            metodoPagoSeleccionado = $(this).data('method');
+            
+            // Mostrar el formulario correspondiente
+            $('#form-tarjeta').hide();
+            $('#instrucciones-yape').hide();
+            
+            if (metodoPagoSeleccionado === 'tarjeta') {
+                $('#form-tarjeta').show();
+            } else if (metodoPagoSeleccionado === 'yape') {
+                $('#instrucciones-yape').show();
+            }
+        });
+        
+        // Confirmar pago
+        $('#btn-confirmar-pago').click(function() {
+            if (!metodoPagoSeleccionado) {
+                alert('Por favor selecciona un método de pago');
+                return;
+            }
+            
+            if (metodoPagoSeleccionado === 'tarjeta') {
+                // Validar formulario de tarjeta (simplificado)
+                const tarjetaValida = true; // En una implementación real validaríamos los datos
+                
+                if (!tarjetaValida) {
+                    alert('Por favor completa correctamente los datos de tu tarjeta');
+                    return;
+                }
+            }
+            
+            // Mostrar confirmación
+            $('#paso-productos').hide();
+            $('#formulario-pago').hide();
+            $('#confirmacion-pago').show();
+            
+            // Actualizar detalles en la confirmación
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const subtotal = carrito.reduce((total, item) => total + (item.precio * item.cantidad), 0);
+            const envio = subtotal > 50 ? 0 : 5;
+            const total = subtotal + envio;
+            
+            $('#total-confirmacion').html(`Total pagado: <strong>S/${total.toFixed(2)}</strong>`);
+            
+            let metodoTexto = '';
+            switch(metodoPagoSeleccionado) {
+                case 'tarjeta': metodoTexto = 'Tarjeta de Crédito/Débito'; break;
+                case 'yape': metodoTexto = 'Yape/Plin'; break;
+                case 'efectivo': metodoTexto = 'Efectivo al recibir'; break;
+            }
+            
+            $('#metodo-pago').html(`Método de pago: <strong>${metodoTexto}</strong>`);
+            
+            // Generar número de pedido aleatorio
+            const numeroPedido = `#ABP-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
+            $('#numero-pedido').html(`Número de pedido: <strong>${numeroPedido}</strong>`);
+            
+            // Vaciar el carrito (opcional, podrías mantenerlo para historial)
+            // localStorage.removeItem('carrito');
+            // actualizarContadorCarrito(0);
+        });
+        
+        // Mostrar resumen en el paso de pago
+        function mostrarResumenPago() {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            let html = '';
+            let subtotal = 0;
+            
+            carrito.forEach(producto => {
+                const precioTotal = producto.precio * producto.cantidad;
+                subtotal += precioTotal;
+                
+                html += `
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="mbr-text mbr-fonts-style display-4">${producto.nombre} x${producto.cantidad}</span>
+                        <span class="mbr-text mbr-fonts-style display-4">S/${precioTotal.toFixed(2)}</span>
+                    </div>
+                `;
+            });
+            
+            $('#resumen-pedido-pago').html(html);
+            
+            const envio = subtotal > 50 ? 0 : 5;
+            const total = subtotal + envio;
+            
+            $('#subtotal-pago').text(`S/${subtotal.toFixed(2)}`);
+            $('#envio-pago').text(envio === 0 ? 'Gratis' : `S/${envio.toFixed(2)}`);
+            $('#total-pago').text(`S/${total.toFixed(2)}`);
+        }
+        
+        // Cargar el carrito al inicio
+        cargarCarrito();
+    });
+  </script>
 </body>
 </html>
