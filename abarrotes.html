@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="https://r.mobirisesite.com/1419722/assets/images/photo-1519162808019-7de1683fa2ad.jpeg" type="image/x-icon">
-  <meta name="description" content="Catálogo de abarrotes en Abarrotes El Paraíso. Todo lo que necesitas para tu despensa familiar.">
-  <title>Abarrotes - Abarrotes El Paraíso</title>
+  <meta name="description" content="Catálogo de frutas frescas en Abarrotes El Paraíso. Las mejores frutas de temporada directamente a tu mesa.">
+  <title>Frutas Frescas - Abarrotes El Paraíso</title>
   <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/web/assets/mobirise-icons2/mobirise2.css?rnd=1745140087456">
   <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/bootstrap/css/bootstrap.min.css?rnd=1745140087456">
   <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/bootstrap/css/bootstrap-grid.min.css?rnd=1745140087456">
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/socicon/css/styles.css?rnd=1745140087456">
   <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/theme/css/style.css?rnd=1745140087456">
   <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/recaptcha.css?rnd=1745140087456">
-  <link rel="stylesheet" href="chatbot.css" type="">
+    <link rel="stylesheet" href="chatbot.css" type="">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Liter&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Liter&display=swap&display=swap"></noscript>
   <link rel="stylesheet" href="https://r.mobirisesite.com/1419722/assets/css/mbr-additional.css?rnd=1745140087456" type="text/css">
@@ -60,8 +60,31 @@
     }
     .low-stock {
       color: #ffc107;
+    } 
+    .navbar-fixed-top {
+      top: auto;
+    }
+    .fruit-card {
+      transition: transform 0.3s;
+      margin-bottom: 30px;
+    }
+    .fruit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .fruit-price {
+      color: #28a745;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .fruit-category {
+      margin-top: 50px;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #eee;
     }
   </style>
+
 </head>
 <body>
   
@@ -91,16 +114,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                     <li class="nav-item">
-                        <a class="nav-link link display-4" href="frutas-frescas.html">Frutas Frescas</a>
+                        <a class="nav-link link display-4 active" href="frutas-frescas.html">Frutas Frescas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link display-4 active" href="abarrotes.html">Abarrotes</a>
+                        <a class="nav-link link display-4" href="abarrotes.html">Abarrotes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link link display-4" href="contacto.html">Contacto</a>
                     </li>
                 </ul>
-               <!-- Icono de carrito independiente -->
+                 <!-- Icono de carrito independiente -->
                 <div class="cart-icon ml-auto">
                     <a href="carrito.html" class="nav-link link display-4">
                         <i class="mobi-mbri-cart-add mobi-mbri" style="font-size: 1.5rem;"></i>
@@ -590,7 +613,7 @@
                         <p class="text-danger"><del>S/17.50</del> <span class="badge bg-danger">15% OFF</span></p>
                         <div class="mbr-section-btn mt-3">
                             <a class="btn btn-primary display-4" 
-                              onclick="agregarAlCarrito('Combo Familiar', 14.90, 'Arroz + Aceite + Fideos', 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/1024px/1f381.png')">
+                                onclick="agregarAlCarrito('Combo Familiar', 14.90, 'Arroz + Aceite + Fideos', 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/1024px/1f381.png')">
                                 Agregar al carrito
                             </a>
                         </div>
@@ -609,7 +632,7 @@
                         <p class="text-danger"><del>S/15.50</del> <span class="badge bg-danger">11% OFF</span></p>
                         <div class="mbr-section-btn mt-3">
                             <a class="btn btn-primary display-4" 
-                              onclick="agregarAlCarrito('Pack Lácteos', 13.80, 'Leche + Queso + Yogurt', 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/1024px/1f381.png')">
+                                onclick="agregarAlCarrito('Pack Lácteos', 13.80, 'Leche + Queso + Yogurt', 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/1024px/1f381.png')">
                                 Agregar al carrito
                             </a>
                         </div>
@@ -627,8 +650,8 @@
                         <p class="grocery-price" style="font-size: 1.5rem;">S/8.50</p>
                         <p class="text-danger"><del>S/10.00</del> <span class="badge bg-danger">15% OFF</span></p>
                         <div class="mbr-section-btn mt-3">
-                             <a class="btn btn-primary display-4" 
-                              onclick="agregarAlCarrito('Desayuno Ideal', 8.50, 'Pan + Mantequilla + Mermelada', 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/1024px/1f381.png')">
+                            <a class="btn btn-primary display-4" 
+                                onclick="agregarAlCarrito('Desayuno Ideal', 8.50, 'Pan + Mantequilla + Mermelada', 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/1024px/1f381.png')">
                                 Agregar al carrito
                             </a>
                         </div>
@@ -639,11 +662,11 @@
     </div>
   </section>
 
-<!-- Incluir jQuery (necesario para el modal de Bootstrap) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Incluir jQuery (necesario para el modal de Bootstrap) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- Incluir el script del carrito -->
-<script src="carrito.js"></script>
+  <!-- Incluir el script del carrito -->
+  <script src="carrito.js"></script>
 
   <!-- Footer (igual al index.html) -->
   <section data-bs-version="5.1" class="footer01 ridem5 cid-uITnIBGus9" once="footers" id="footer-1-uITnIBGus9">
@@ -697,8 +720,46 @@
   <script src="https://r.mobirisesite.com/1419722/assets/theme/js/script.js?rnd=1745140087456"></script>
   <script src="https://r.mobirisesite.com/1419722/assets/formoid.min.js?rnd=1745140087456"></script>
   
- 
-    <!-- Chatbot para Abarrotes El Paraíso -->
+    <!-- Script del carrito -->
+  <script>
+    // Función para agregar productos al carrito
+    function agregarAlCarrito(nombre, precio, categoria, imagen) {
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        
+        // Buscar si el producto ya está en el carrito
+        const productoExistente = carrito.find(item => item.nombre === nombre);
+        
+        if (productoExistente) {
+            productoExistente.cantidad += 1;
+        } else {
+            carrito.push({
+                nombre: nombre,
+                precio: precio,
+                categoria: categoria,
+                imagen: imagen,
+                cantidad: 1
+            });
+        }
+        
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        actualizarContadorCarrito();
+        
+        // Mostrar notificación
+        alert(`"${nombre}" ha sido agregado al carrito`);
+    }
+    
+    // Función para actualizar el contador del carrito
+    function actualizarContadorCarrito() {
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        const totalItems = carrito.reduce((total, item) => total + item.cantidad, 0);
+        document.getElementById('contador-carrito').textContent = totalItems;
+    }
+    
+    // Actualizar contador al cargar la página
+    document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
+  </script>
+
+   <!-- Chatbot para Abarrotes El Paraíso -->
 <div id="chatbot-container">
     <div id="chatbot-button">
         <i class="mobi-mbri-chat mobi-mbri"></i>
