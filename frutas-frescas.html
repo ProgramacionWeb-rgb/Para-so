@@ -647,6 +647,132 @@
     <script src="https://r.mobirisesite.com/1419722/assets/theme/js/script.js?rnd=1745140087456"></script>
     <script src="https://r.mobirisesite.com/1419722/assets/formoid.min.js?rnd=1745140087456"></script>
 
+    <!-- Chatbot para Abarrotes El Paraíso -->
+<div id="chatbot-container">
+    <div id="chatbot-button">
+        <i class="mobi-mbri-chat mobi-mbri"></i>
+    </div>
+    <div id="chatbot-window">
+        <div class="chatbot-header">
+            <a href="#"><img src="https://r.mobirisesite.com/1419722/assets/images/photo-1519162808019-7de1683fa2ad.jpeg" alt="" style="height: 50px;" ></a>
+            <h3>Asistente de Paraíso</h3>
+            <button id="close-chat">×</button>
+        </div>
+        <div id="chat-messages">
+            <div class="bot-message">
+                ¡Hola! Soy el asistente de Abarrotes El Paraíso. ¿En qué puedo ayudarte hoy? 😊
+                <div class="quick-questions-intro">Puedes preguntarme sobre:</div>
+                <div class="quick-questions-container">
+                    <button class="quick-question">Horarios</button>
+                    <button class="quick-question">Entregas</button>
+                    <button class="quick-question">Productos</button>
+                    <button class="quick-question">Promociones</button>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input-container">
+            <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+            <button id="send-btn">
+                <i class="mobi-mbri-right mobi-mbri"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Elementos del DOM
+        const chatbotButton = document.getElementById('chatbot-button');
+        const chatbotWindow = document.getElementById('chatbot-window');
+        const closeChat = document.getElementById('close-chat');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+        const chatMessages = document.getElementById('chat-messages');
+        const quickQuestions = document.querySelectorAll('.quick-question');
+        
+        // Mostrar/ocultar el chat
+        chatbotButton.addEventListener('click', function() {
+            chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'block' : 'none';
+        });
+        
+        closeChat.addEventListener('click', function() {
+            chatbotWindow.style.display = 'none';
+        });
+        
+        // Enviar mensaje al presionar Enter
+        userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        // Enviar mensaje al hacer clic en el botón
+        sendBtn.addEventListener('click', sendMessage);
+        
+        // Preguntas rápidas
+        quickQuestions.forEach(button => {
+            button.addEventListener('click', function() {
+                userInput.value = this.textContent;
+                sendMessage();
+            });
+        });
+        
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message === '') return;
+            
+            // Mostrar mensaje del usuario
+            addMessage(message, 'user');
+            userInput.value = '';
+            
+            // Simular "escribiendo..."
+            const typingIndicator = document.createElement('div');
+            typingIndicator.className = 'bot-message';
+            typingIndicator.textContent = 'Escribiendo...';
+            chatMessages.appendChild(typingIndicator);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            // Respuesta del bot después de un breve retraso
+            setTimeout(() => {
+                chatMessages.removeChild(typingIndicator);
+                const response = getBotResponse(message);
+                addMessage(response, 'bot');
+            }, 1000);
+        }
+        
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = sender === 'user' ? 'user-message' : 'bot-message';
+            messageDiv.textContent = text;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        function getBotResponse(message) {
+            const lowerMessage = message.toLowerCase();
+            
+            if (lowerMessage.includes('hola') || lowerMessage.includes('buenos días') || lowerMessage.includes('buenas tardes')) {
+                return '¡Hola! Bienvenido a Abarrotes El Paraíso. ¿En qué puedo ayudarte hoy?';
+            } else if (lowerMessage.includes('horario') || lowerMessage.includes('hora') || lowerMessage.includes('abierto')) {
+                return 'Estamos abiertos de lunes a domingo de 8:00 am a 8:00 pm. ¡Te esperamos!';
+            } else if (lowerMessage.includes('entrega') || lowerMessage.includes('domicilio') || lowerMessage.includes('envío')) {
+                return 'Sí, hacemos entregas a domicilio en el área local con un mínimo de compra de S/30. El costo de envío es de S/5.';
+            } else if (lowerMessage.includes('producto') || lowerMessage.includes('fruta') || lowerMessage.includes('abarrote')) {
+                return 'Ofrecemos una amplia variedad de frutas frescas y abarrotes de calidad. Puedes ver nuestros productos en las secciones "Frutas Frescas" y "Abarrotes" del menú.';
+            } else if (lowerMessage.includes('precio') || lowerMessage.includes('cost') || lowerMessage.includes('promoción')) {
+                return 'Tenemos precios competitivos y ofertas especiales cada semana. ¿Te interesa algún producto en particular para darte más detalles?';
+            } else if (lowerMessage.includes('ubicación') || lowerMessage.includes('dirección') || lowerMessage.includes('local')) {
+                return 'Nos ubicamos en Av. Arequipa 805. ¡Ven a visitarnos!';
+            } else if (lowerMessage.includes('contacto') || lowerMessage.includes('teléfono') || lowerMessage.includes('correo')) {
+                return 'Puedes contactarnos al 555-1234 o al correo contacto@elparaiso.com. También estamos en redes sociales.';
+            } else if (lowerMessage.includes('gracias') || lowerMessage.includes('agradecido')) {
+                return '¡Gracias a ti por contactarnos! Si necesitas algo más, aquí estoy. 😊';
+            } else {
+                return 'Gracias por tu mensaje. Si deseas información más específica, puedes llamarnos al 555-1234 o visitar nuestra tienda en Av. Arequipa 805.';
+            }
+        }
+    });
+</script>
    
 </body>
 </html>
